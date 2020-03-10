@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<style>
+    body{
+        background-color: #fbb12f;
+    }
+    .content{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .top{
+        background-color: #d42222;
+        width: 25%;
+        height: 25vh;
+        border-radius: 400px 400px 0% 0%;
+        border: 2px solid rgb(44, 44, 44);
+        overflow: hidden; 
+    }
+
+    .bottom{
+        background-color: white;
+        width: 25%;
+        height: 25vh;
+        border-radius: 0% 0% 400px 400px;
+        border: 2px solid rgb(44, 44, 44);
+    }
+    .center{
+        background-color: rgb(44, 44, 44);
+        width: 24.8%;
+        height: 6px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .centerball{
+        width: 3.75vw;
+        height: 7.5vh;
+        background-color: white;
+        z-index: 100;
+        border-radius: 100%;
+        border: 10px solid rgb(44, 44, 44);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .minicenterball{
+        width: 1.825vw;
+        height: 3.75vh;
+        background-color: white;
+        border-radius: 100%;
+        border: 3px solid rgb(44, 44, 44);
+    }
+    /* .shine{
+        width: 4.5vw;
+        height: 6vh;
+        background-color: rgba(255, 255, 255 ,0.4);
+        border-radius: 100%;
+        display: absolute;
+        transform: rotate(-45deg) translate(-50% ,200%);
+    }  */
+    .bar1{
+        content: '';
+        position: relative;
+        width: 15%;
+        height: 60vh;
+        left: -10%;
+        background-color: rgba(255, 255, 255 ,0.5);
+        transform: rotate(160deg) translate(50% ,20%);
+        transition: left 0.8s;
+    }
+    .bar2{
+        content: '';
+        position: relative;
+        width: 5%;
+        height: 60vh;
+        left: -10%;
+        background-color: rgba(255, 255, 255 ,0.7);
+        transform: rotate(160deg) translate(-190% ,150%);
+        transition: left 0.8s;
+    }
+    .shine-active{
+        left: 150%;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokeball</title>
+</head>
+<body>
+    <div class="content">
+        <div class="top">
+            <div class="shine"></div>
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <div class="center"> 
+            <div class="centerball"> <div class="minicenterball"></div> </div>
+        </div>
+        <div class="bottom"></div>
+        
+    </div>
+
+</body>
+<script>
+    const tops = document.querySelector('.top')
+    const shine = document.querySelector('.bar1')
+    const shine2 = document.querySelector('.bar2')
+    tops.addEventListener('click', function(){
+        shine.classList.add('shine-active')
+        shine2.classList.add('shine-active')
+    })
+</script>
+</html>
